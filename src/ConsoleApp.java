@@ -34,7 +34,7 @@ public class ConsoleApp {
                     9.Get charakteren
                     10.Get produkten
                    
-                    11.Add product to customer
+                    11.filter Nach Region
                     0.Exit
                     """);
 
@@ -74,6 +74,10 @@ public class ConsoleApp {
                 case "10":
                     controller.getPro(scanner);
                     break;
+                case "11":
+                    controller.filterNachRegion(scanner);
+                    break;
+
                 default:
             }
         }

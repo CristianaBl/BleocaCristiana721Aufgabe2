@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
-
+    static List<Charakteren> charaktere = new ArrayList<>();
     private final Repository<Charakteren> repoX;
     private final Repository<Produkten> repoY;
 
@@ -144,6 +144,16 @@ public class Controller {
         }
     }
 
+        static void filterNachRegion(Scanner scanner) {
+        System.out.println("Herkunftsort eingeben: ");
+        String region = scanner.nextLine();
+        System.out.println("Charaktere aus " + region + ":");
+        for (Charakteren c : charaktere) {
+            if (c.getOrt().equalsIgnoreCase(region)) {
+                System.out.println(c.getName());
+            }
+        }
+    }
 
 
 

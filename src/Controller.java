@@ -169,22 +169,22 @@ public class Controller {
         }
     }
 
-    static void sortiereProdukteEinesCharakters(Scanner scanner) {
-        System.out.println(" name: ");
-        String name = scanner.nextLine();
-        System.out.println(" aufst: ");
-        Boolean nach = Boolean.parseBoolean(scanner.nextLine());
-        for (Charakteren c : charaktere) {
-            if (c.getName().equalsIgnoreCase(name)) {
-                c.getOrederdProducts().sort((p1, p2) -> nach ? Double.compare(p1.getPrice(), p2.getPrice()) : Double.compare(p2.getPrice(), p1.getPrice()));
-                for (Produkten p : c.getOrederdProducts()) {
-                    System.out.println(p.getName() + " - " + p.getPrice());
-                }
-                return;
-            }
-        }
-        System.out.println("Charakter not found with name.");
-    }
+//    static void sortiereProdukteEinesCharakters(Scanner scanner) {
+//        System.out.println(" name: ");
+//        String name = scanner.nextLine();
+//        System.out.println(" aufst: ");
+//        Boolean nach = Boolean.parseBoolean(scanner.nextLine());
+//        for (Charakteren c : charaktere) {
+//            if (c.getName().equalsIgnoreCase(name)) {
+//                c.getOrederdProducts().sort((p1, p2) -> nach ? Double.compare(p1.getPrice(), p2.getPrice()) : Double.compare(p2.getPrice(), p1.getPrice()));
+//                for (Produkten p : c.getOrederdProducts()) {
+//                    System.out.println(p.getName() + " - " + p.getPrice());
+//                }
+//                return;
+//            }
+//        }
+//        System.out.println("Charakter not found with name.");
+//    }
 
 
 }

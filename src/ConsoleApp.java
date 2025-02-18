@@ -32,9 +32,9 @@ public class ConsoleApp {
                     7.Update charakteren
                     8.Update produkten
                     9.Get charakteren
-                    10.Get produkten
-                   
+                    10.Get produkte
                     11.filter Nach Region
+                    12.zeige Charaktere mit Prod
                     0.Exit
                     """);
 
@@ -98,9 +98,9 @@ public class ConsoleApp {
     private static Repository<Charakteren> createInMemoryXRepository() {
         Repository<Charakteren> xRepo = new InMemoryRepository<>();
         List<Charakteren> charaktere = new ArrayList<>();
-//
-//        Charakter c1 = new Charakter(1, "Thor", "Asgard");
-//        c1.kaufeProdukt(produkte.get(0)); // Mjolnir
+
+//        Charakteren c1 = new Charakteren(1, "Thor", "Asgard");
+//        c1.setOrederdProducts(produkte.get(0)); // Mjolnir
 //        c1.kaufeProdukt(produkte.get(5)); // Norn Stones
 //        c1.kaufeProdukt(produkte.get(9)); // Darkhold
 //
@@ -121,7 +121,7 @@ public class ConsoleApp {
 //        c5.kaufeProdukt(produkte.get(9)); // Darkhold
 //        c5.kaufeProdukt(produkte.get(8)); // Cosmic Cube
 //        c5.kaufeProdukt(produkte.get(2)); // Infinity Gauntlet
-
+//
 //        charaktere.add(c1);
 //        charaktere.add(c2);
 //        charaktere.add(c3);

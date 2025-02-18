@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Controller {
     static List<Charakteren> charaktere = new ArrayList<>();
@@ -155,6 +156,35 @@ public class Controller {
         }
     }
 
+    static void zeigeCharakteremitProd(Scanner scanner) {
+        System.out.println(" universum: ");
+        String universum = scanner.nextLine();
+        List<Charakteren> gefilterteCharaktere = charaktere.stream()
+                .filter(c -> c.getOrederdProducts().stream().anyMatch(p -> p.getUniversum().equalsIgnoreCase(universum)))
+                .sorted(Comparator.comparing(c -> c.getName()))
+                .collect(Collectors.toList());
+
+        for (Charakteren c : gefilterteCharaktere) {
+            System.out.println(c.getName());
+        }
+    }
+
+    static void sortiereProdukteEinesCharakters(Scanner scanner) {
+        System.out.println(" name: ");
+        String name = scanner.nextLine();
+        System.out.println(" aufst: ");
+        Boolean nach = Boolean.parseBoolean(scanner.nextLine());
+        for (Charakteren c : charaktere) {
+            if (c.getName().equalsIgnoreCase(name)) {
+                c.getOrederdProducts().sort((p1, p2) -> nach ? Double.compare(p1.getPrice(), p2.getPrice()) : Double.compare(p2.getPrice(), p1.getPrice()));
+                for (Produkten p : c.getOrederdProducts()) {
+                    System.out.println(p.getName() + " - " + p.getPrice());
+                }
+                return;
+            }
+        }
+        System.out.println("Charakter not found with name.");
+    }
 
 
 }

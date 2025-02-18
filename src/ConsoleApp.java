@@ -77,6 +77,8 @@ public class ConsoleApp {
                 case "11":
                     controller.filterNachRegion(scanner);
                     break;
+                case "12":
+                    controller.zeigeCharakteremitProd(scanner);
 
                 default:
             }
